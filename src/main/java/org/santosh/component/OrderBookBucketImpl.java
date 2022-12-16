@@ -63,7 +63,7 @@ public class OrderBookBucketImpl implements OrderBook<BOrder> {
                 removeOrder(orderId, order, offerMap);
                 break;
             default:
-                throw new RuntimeException("Invalid Order type specified:" + order);
+                throw new RuntimeException("Order not found for order Id " + orderId);
         }
     }
 
