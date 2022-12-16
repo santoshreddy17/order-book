@@ -14,7 +14,7 @@ import static org.santosh.model.Order.OFFER;
 public class OrderBookImplTest {
 
 
-    private OrderBook orderBook;
+    private OrderBook<Order> orderBook;
 
     @Before
     public void setUp() {

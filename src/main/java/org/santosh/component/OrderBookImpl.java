@@ -16,8 +16,7 @@ import static org.santosh.model.Order.OFFER;
  * A limit order book stores customer orders on a price time priority basis. The highest bid and lowest oer
  * are considered "best" with all other orders stacked in price levels behind.
  */
-public class OrderBookImpl implements OrderBook {
-
+public class OrderBookImpl implements OrderBook<Order> {
 
 
     private final ConcurrentSkipListMap<Double, Set<Order>> bidMap;
@@ -68,8 +67,8 @@ public class OrderBookImpl implements OrderBook {
         sideMap.get(order.getPrice()).remove(order);
         if (sideMap.get(order.getPrice()).isEmpty()) {
             sideMap.remove(order.getPrice());
-            orderMap.remove(orderId);
         }
+        orderMap.remove(orderId);
     }
 
     @Override

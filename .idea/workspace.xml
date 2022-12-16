@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72291bde-2992-4d95-87f8-bfffb861b149" name="Changes" comment="commit code with tests">
+    <list default="true" id="72291bde-2992-4d95-87f8-bfffb861b149" name="Changes" comment="new bucket order implementation">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/santosh/component/OrderBookBucketImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/santosh/model/BOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/santosh/model/OrderBucket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/santosh/model/OrderSide.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/santosh/component/OrderBookBucketImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/santosh/component/OrderBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/santosh/component/OrderBook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/santosh/component/OrderBookImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/santosh/component/OrderBookImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/santosh/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/santosh/model/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/santosh/component/OrderBookImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/santosh/component/OrderBookImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,13 +23,19 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/orderbookv1" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -38,19 +47,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -58,8 +67,59 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="org.santosh.component" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.santosh.component" />
+      <recent name="org.santosh.model" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.OrderBookImplTest.getAllOrdersBySide">
+  <component name="RunManager" selected="JUnit.OrderBookBucketImplTest.getAllOrdersBySide">
+    <configuration name="OrderBookBucketImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="order-book" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.santosh.component.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.santosh.component" />
+      <option name="MAIN_CLASS_NAME" value="org.santosh.component.OrderBookBucketImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderBookBucketImplTest.getAllOrdersBySide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="order-book" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.santosh.component.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.santosh.component" />
+      <option name="MAIN_CLASS_NAME" value="org.santosh.component.OrderBookBucketImplTest" />
+      <option name="METHOD_NAME" value="getAllOrdersBySide" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderBookBucketImplTest.removeOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="order-book" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.santosh.component.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.santosh.component" />
+      <option name="MAIN_CLASS_NAME" value="org.santosh.component.OrderBookBucketImplTest" />
+      <option name="METHOD_NAME" value="removeOrder" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="OrderBookImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="order-book" />
       <extension name="coverage">
@@ -91,61 +151,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderBookImplTest.getPrice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="order-book" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.santosh.component.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.santosh.component" />
-      <option name="MAIN_CLASS_NAME" value="org.santosh.component.OrderBookImplTest" />
-      <option name="METHOD_NAME" value="getPrice" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OrderBookImplTest.getTotalOrders" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="order-book" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.santosh.component.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.santosh.component" />
-      <option name="MAIN_CLASS_NAME" value="org.santosh.component.OrderBookImplTest" />
-      <option name="METHOD_NAME" value="getTotalOrders" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OrderBookImplTest.updateOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="order-book" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.santosh.component.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.santosh.component" />
-      <option name="MAIN_CLASS_NAME" value="org.santosh.component.OrderBookImplTest" />
-      <option name="METHOD_NAME" value="updateOrder" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.OrderBookImplTest" />
+        <item itemvalue="JUnit.OrderBookBucketImplTest.getAllOrdersBySide" />
+        <item itemvalue="JUnit.OrderBookBucketImplTest" />
+        <item itemvalue="JUnit.OrderBookBucketImplTest.removeOrder" />
         <item itemvalue="JUnit.OrderBookImplTest.getAllOrdersBySide" />
-        <item itemvalue="JUnit.OrderBookImplTest.getTotalOrders" />
-        <item itemvalue="JUnit.OrderBookImplTest.getPrice" />
-        <item itemvalue="JUnit.OrderBookImplTest.updateOrder" />
       </list>
     </recent_temporary>
   </component>
@@ -158,6 +170,14 @@
       <option name="presentableId" value="Default" />
       <updated>1670498212401</updated>
     </task>
+    <task id="LOCAL-00001" summary="Some enhancements to orderbook">
+      <created>1671192532959</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1671192532959</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -173,7 +193,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit code with tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit code with tests" />
+    <MESSAGE value="Some enhancements to orderbook" />
+    <MESSAGE value="new bucket order implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="new bucket order implementation" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -184,6 +207,26 @@
           <url>file://$PROJECT_DIR$/src/test/java/org/santosh/component/OrderBookImplTest.java</url>
           <line>83</line>
           <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/santosh/model/OrderBucket.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/org/santosh/component/OrderBookImplTest.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/org/santosh/component/OrderBookBucketImplTest.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/org/santosh/component/OrderBookBucketImplTest.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

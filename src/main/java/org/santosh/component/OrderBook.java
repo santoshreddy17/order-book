@@ -1,7 +1,5 @@
 package org.santosh.component;
 
-import org.santosh.model.Order;
-
 import java.util.List;
 
 /**
@@ -9,14 +7,14 @@ import java.util.List;
  * A limit order book stores customer orders on a price time priority basis. The highest bid and lowest oer
  * are considered "best" with all other orders stacked in price levels behind.
  */
-public interface OrderBook {
+public interface OrderBook<T> {
 
      /**
       * Add Order.
       *
       * @param order order.
       */
-     void addOrder(Order order);
+     void addOrder(T order);
 
      /**
       * Remove Order.
@@ -58,7 +56,7 @@ public interface OrderBook {
       * @param side side.
       * @return Get all orders from the side of the book in level & time order.
       */
-     List<Order> getAllOrdersBySide(char side);
+     List<T> getAllOrdersBySide(char side);
 
 
 }
