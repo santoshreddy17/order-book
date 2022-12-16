@@ -152,9 +152,9 @@ public class OrderBookBucketImpl implements OrderBook<BOrder> {
         final OrderSide orderSide = OrderSide.getOrderSide(side);
         switch (orderSide) {
             case BID:
-                return bidMap.values().stream().map(OrderBucket::getOrders).flatMap(Collection::stream).collect(Collectors.toList());
+                return bidMap.values().parallelStream().map(OrderBucket::getOrders).flatMap(Collection::stream).collect(Collectors.toList());
             case OFFER:
-                return offerMap.values().stream().map(OrderBucket::getOrders).flatMap(Collection::stream).collect(Collectors.toList());
+                return offerMap.values().parallelStream().map(OrderBucket::getOrders).flatMap(Collection::stream).collect(Collectors.toList());
             default:
                 throw new RuntimeException("Invalid side" + side);
         }
