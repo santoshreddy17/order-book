@@ -7,8 +7,9 @@ import org.santosh.model.Order;
 
 import java.util.List;
 
-import static org.santosh.component.OrderBookImpl.BID;
-import static org.santosh.component.OrderBookImpl.OFFER;
+import static org.santosh.model.Order.BID;
+import static org.santosh.model.Order.OFFER;
+
 
 public class OrderBookImplTest {
 

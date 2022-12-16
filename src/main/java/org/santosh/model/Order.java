@@ -2,7 +2,11 @@ package org.santosh.model;
 
 import java.util.Objects;
 
+
 public class Order {
+
+    public static final char BID = 'B';
+    public static final char OFFER = 'O';
     private final long id;
     private final double price;
     private final char side;
@@ -29,6 +33,14 @@ public class Order {
 
     public long getSize() {
         return size;
+    }
+
+    public boolean isBidOrder() {
+        return BID == this.getSide();
+    }
+
+    public boolean isOfferOrder() {
+        return OFFER == this.getSide();
     }
 
     @Override

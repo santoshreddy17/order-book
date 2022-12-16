@@ -8,6 +8,9 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.stream.Collectors;
 
+import static org.santosh.model.Order.BID;
+import static org.santosh.model.Order.OFFER;
+
 /**
  * Order Book Implementation.
  * A limit order book stores customer orders on a price time priority basis. The highest bid and lowest oer
@@ -15,8 +18,7 @@ import java.util.stream.Collectors;
  */
 public class OrderBookImpl implements OrderBook {
 
-    public static final char BID = 'B';
-    public static final char OFFER = 'O';
+
 
     private final ConcurrentSkipListMap<Double, Set<Order>> bidMap;
     private final ConcurrentSkipListMap<Double, Set<Order>> offerMap;
@@ -34,9 +36,9 @@ public class OrderBookImpl implements OrderBook {
      * @param order order
      */
     public void addOrder(final Order order) {
-        if (isBidOrder(order)) {
+        if (order.isBidOrder()) {
             addBidOrder(order);
-        } else if (isOfferOrder(order)) {
+        } else if (order.isOfferOrder()) {
             addOfferOrder(order);
         } else {
             throw new RuntimeException("Invalid Order type specified:" + order);
@@ -50,9 +52,9 @@ public class OrderBookImpl implements OrderBook {
      */
     public void removeOrder(final Long orderId) {
         final Order order = orderMap.get(orderId);
-        if (isBidOrder(order)) {
+        if (order.isBidOrder()) {
             removeOrder(bidMap, order, orderId);
-        } else if (isOfferOrder(order)) {
+        } else if (order.isOfferOrder()) {
             removeOrder(offerMap, order, orderId);
         } else {
             throw new RuntimeException("Order not found for order Id " + orderId);
@@ -75,10 +77,10 @@ public class OrderBookImpl implements OrderBook {
                             final Long newSize) {
         final Order order = orderMap.get(orderId);
         final Order newOrder = new Order(orderId, order.getPrice(), order.getSide(), newSize);
-        if (isBidOrder(order)) {
+        if (order.isBidOrder()) {
             bidMap.get(order.getPrice()).remove(order);
             bidMap.get(order.getPrice()).add(newOrder);
-        } else if (isOfferOrder(order)) {
+        } else if (order.isOfferOrder()) {
             offerMap.get(order.getPrice()).remove(order);
             offerMap.get(order.getPrice()).add(newOrder);
         }
@@ -90,9 +92,9 @@ public class OrderBookImpl implements OrderBook {
         int index = level - 1;
         switch (side) {
             case BID:
-                return new ArrayList<>(bidMap.keySet()).get(index);
+                return (Double) bidMap.keySet().toArray()[index];
             case OFFER:
-                return new ArrayList<>(offerMap.keySet()).get(index);
+                return (Double) offerMap.keySet().toArray()[index];
             default:
                 throw new RuntimeException("Invalid combination of side " + side + " level" + level);
         }
@@ -153,13 +155,6 @@ public class OrderBookImpl implements OrderBook {
         orderMap.put(order.getId(), order);
     }
 
-    private boolean isBidOrder(final Order order) {
-        return BID == order.getSide();
-    }
-
-    private boolean isOfferOrder(final Order order) {
-        return OFFER == order.getSide();
-    }
 
 
 }
